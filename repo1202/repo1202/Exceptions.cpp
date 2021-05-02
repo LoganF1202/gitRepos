@@ -26,6 +26,6 @@ char character(char start, int offset)
 int main()
 {
 
-	cout << character('a', 6);
+	cout << character('a', 7);
 
 }
