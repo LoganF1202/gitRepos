@@ -20,12 +20,14 @@ char character(char start, int offset)
 		throw "NULL variable";
 	}
 
-	if ((!isalpha(start)) || (!isalnum(offset)))
+
+	if (!(isalpha(start)) || isalpha(offset))
 	{
 		throw "invalid input";
 	}
 
-	if (!(start < 123 && start > 98) || !(start < 91 && start > 64)) // A-Z 65-90, a-z 97-122
+	int startint = start;
+	if (!(startint < 123 && startint > 98) && !(startint < 91 && startint > 64)) // A-Z 65-90, a-z 97-122
 	{
 		throw "invalid character";
 	}
@@ -44,6 +46,57 @@ char character(char start, int offset)
 
 int main()
 {
-	cout << character('a', 7);
+	try // test one should return 'o'
+	{
+		cout << character('h', 7) << endl;
+	}
+	catch (const char* msg)
+	{
+		cerr << msg << endl;
+	}
 
+	try // test two should throw invalid input
+	{
+		cout << character(9, 7) << endl;
+	}
+	catch (const char* msg)
+	{
+		cerr << msg << endl;
+	}
+
+	try // test three should throw invalid input
+	{
+		cout << character('h', 'y') << endl;
+	}
+	catch (const char* msg)
+	{
+		cerr << msg << endl;
+	}
+
+	try // test four should throw null variable
+	{
+		cout << character(NULL, 12) << endl;
+	}
+	catch (const char* msg)
+	{
+		cerr << msg << endl;
+	}
+
+	try // test five should throw invalid range
+	{
+		cout << character('Z', 1) << endl;
+	}
+	catch (const char* msg)
+	{
+		cerr << msg << endl;
+	}
+
+	try // test six should return U
+	{
+		cout << character('Z', -5) << endl;
+	}
+	catch (const char* msg)
+	{
+		cerr << msg << endl;
+	}
 }
