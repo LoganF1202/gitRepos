@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <math.h> 
 
 using namespace std;
 
@@ -12,21 +13,22 @@ CIS 1202 502
 
 int half(int cut)
 {
-	double halved = cut / 2;
-	round(halved);
-	cut = halved;
+	double dubcut = cut;
+	double halved = dubcut / 2;
+	halved = round(halved);
+	cut = (int)halved;
 
 	return cut;
 }
 
-int half(double cut)
+double half(double cut)
 {
 	cut = cut / 2;
 
 	return cut;
 }
 
-int half(float cut)
+float half(float cut)
 {
 	cut = cut / 2.0f;
 
@@ -35,7 +37,11 @@ int half(float cut)
 
 int main()
 {
+	double a = 7;
+	float b = 5.0f;
+	int c = 3;
 
-
-
+	cout << half(a) << endl;
+	cout << half(b) << endl;
+	cout << half(c) << endl;
 };

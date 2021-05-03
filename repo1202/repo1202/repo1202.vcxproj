@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Exceptions.cpp" />
     <ClCompile Include="Templates.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
